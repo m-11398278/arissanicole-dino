@@ -1,8 +1,13 @@
 basic.forever(function () {
     if (input.lightLevel() < 100) {
-        pins.servoWritePin(AnalogPin.P2, 180)
+        pins.servoWritePin(AnalogPin.P2, 142)
     } else {
         pins.servoWritePin(AnalogPin.P2, 0)
+    }
+})
+basic.forever(function () {
+    if (input.buttonIsPressed(Button.AB)) {
+        music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
     }
 })
 basic.forever(function () {
